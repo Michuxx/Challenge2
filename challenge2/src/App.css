@@ -1,0 +1,57 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.credit-site {
+  display: flex;
+}
+
+.credits-images-side {
+  width: 30vw;
+  background-image: url(./images/bg-main-desktop.png);
+  background-size: cover;
+  height: 100vh;
+}
+
+.user-form-side {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expiration {
+  display: flex;
+  gap: 10px;
+}
+
+.user-form {
+  width: 17vw;
+}
+
+.card-name .card-input,
+.card-number .card-input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.card-expiration {
+  width: 60%;
+}
+
+.card-expiration .card-input {
+  width: 40%;
+  display: inline-block;
+}
+
+#card-input-id {
+  float: right;
+}
+
+.confirm-btn {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+}
