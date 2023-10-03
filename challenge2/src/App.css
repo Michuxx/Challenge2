@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
 }
 
@@ -23,11 +23,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
 }
 
 .expiration {
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 
 .user-form {
@@ -35,13 +37,18 @@ body {
 }
 
 .card-name .card-input,
-.card-number .card-input {
+.card-number .card-input,
+.card-three-numbers .card-input {
   box-sizing: border-box;
   width: 100%;
 }
 
 .card-expiration {
-  width: 60%;
+  width: 50%;
+}
+
+.card-three-numbers {
+  width: 50%;
 }
 
 .card-expiration .card-input {
@@ -50,12 +57,33 @@ body {
 }
 
 #card-input-id {
-  float: right;
+  margin-left: 4px;
+}
+
+.card-input {
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 6px;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.card-input:focus {
+  border-color: linear-gradient(
+    to right,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  outline: none !important;
 }
 
 .confirm-btn {
   box-sizing: border-box;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 32px;
   padding: 12px;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: hsl(278, 68%, 11%);
+  border-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 6px;
 }

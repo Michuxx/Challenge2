@@ -36,12 +36,11 @@ function App() {
                   <label>EXP. DATE (MM/YY)</label>
                 </div>
                 <div className="card-expiration-inputs">
-                  <input type="text" name="" className="card-input" size="2" />
+                  <input type="text" name="" className="card-input" />
                   <input
                     type="text"
                     name=""
                     className="card-input"
-                    size="2"
                     id="card-input-id"
                   />
                 </div>
@@ -50,9 +49,9 @@ function App() {
                 <div className="card-three-numbers-label">
                   <label>CVC</label>
                 </div>
-              <div className="card-three-numbers-input">
-                <input type="text" name="" className="card-input" />
-              </div>
+                <div className="card-three-numbers-input">
+                  <input type="text" name="" className="card-input" />
+                </div>
               </div>
             </div>
             <button className="confirm-btn">Confirm</button>
