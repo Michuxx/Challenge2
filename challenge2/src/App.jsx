@@ -32,21 +32,27 @@ function App() {
             <br />
             <div className="expiration">
               <div className="card-expiration">
-                <label>EXP. DATE (MM/YY)</label>
-                <br />
-                <input type="text" name="" className="card-input" size="2" />
-                <input
-                  type="text"
-                  name=""
-                  className="card-input"
-                  size="2"
-                  id="card-input-id"
-                />
+                <div className="card-expiration-label">
+                  <label>EXP. DATE (MM/YY)</label>
+                </div>
+                <div className="card-expiration-inputs">
+                  <input type="text" name="" className="card-input" size="2" />
+                  <input
+                    type="text"
+                    name=""
+                    className="card-input"
+                    size="2"
+                    id="card-input-id"
+                  />
+                </div>
               </div>
               <div className="card-three-numbers">
-                <label>CVC</label>
-                <br />
+                <div className="card-three-numbers-label">
+                  <label>CVC</label>
+                </div>
+              <div className="card-three-numbers-input">
                 <input type="text" name="" className="card-input" />
+              </div>
               </div>
             </div>
             <button className="confirm-btn">Confirm</button>
