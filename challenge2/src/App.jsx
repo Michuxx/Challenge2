@@ -9,10 +9,10 @@ function App() {
       <div className="credit-site">
         <div className="credits-images-side">
           <div className="front-card">
-            <img src={CardFront} alt="" />
+            <img src={CardFront} alt="" className="card-image" />
           </div>
           <div className="back-card">
-            <img src={CardBack} alt="" />
+            <img src={CardBack} alt="" className="card-image" />
           </div>
         </div>
         <div className="user-form-side">

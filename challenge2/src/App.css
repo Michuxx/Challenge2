@@ -7,6 +7,10 @@ body {
   font-size: 18px;
 }
 
+label {
+  letter-spacing: 2px;
+}
+
 .credit-site {
   display: flex;
 }
@@ -33,7 +37,7 @@ body {
 }
 
 .user-form {
-  width: 17vw;
+  width: 28vw;
 }
 
 .card-name .card-input,
@@ -86,4 +90,21 @@ body {
   border-color: hsl(278, 68%, 11%);
   color: hsl(0, 0%, 100%);
   border-radius: 6px;
+}
+
+.front-card {
+  position: relative;
+  left: 43%;
+  top: 22%;
+}
+
+.back-card {
+  position: relative;
+  left: 58%;
+  top: 25%;
+}
+
+.card-image {
+  height: auto;
+  max-width: 100%;
 }
