@@ -1,7 +1,5 @@
 import "./App.css";
 import React from "react";
-import CardFront from "./images/bg-card-front.png";
-import CardBack from "./images/bg-card-back.png";
 
 function App() {
   return (
@@ -9,10 +7,24 @@ function App() {
       <div className="credit-site">
         <div className="credits-images-side">
           <div className="front-card">
-            <img src={CardFront} alt="" className="card-image" />
+            <div className="front-card-content">
+              <div className="circles">
+                <div className="big-circle"></div>
+                <div className="small-circle"></div>
+              </div>
+              <div className="front-card-number-display">
+                <p>1234 1234 1234 1234</p>
+              </div>
+              <div className="bottom-front-card-information-display">
+                <p>Laura Braum</p>
+                <p>12/12</p>
+              </div>
+            </div>
           </div>
           <div className="back-card">
-            <img src={CardBack} alt="" className="card-image" />
+            <div className="back-card-content">
+              <p>000</p>
+            </div>
           </div>
         </div>
         <div className="user-form-side">
