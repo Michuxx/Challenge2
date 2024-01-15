@@ -16,7 +16,7 @@ function App() {
                 <p>1234 1234 1234 1234</p>
               </div>
               <div className="bottom-front-card-information-display">
-                <p>Laura Braum</p>
+                <p>Strażak Braum</p>
                 <p>12/12</p>
               </div>
             </div>

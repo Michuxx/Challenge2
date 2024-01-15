@@ -92,6 +92,10 @@ label {
   border-radius: 6px;
 }
 
+.confirm-btn:hover {
+  cursor: pointer;
+}
+
 .front-card {
   position: relative;
   left: 43%;
@@ -103,6 +107,7 @@ label {
   height: 0;
   padding-top: 54.8%;
   display: flex;
+  box-shadow: 0px 0px 20px black;
 }
 
 .front-card-content {
@@ -163,6 +168,7 @@ label {
   height: 0;
   padding-top: 54.8%;
   display: flex;
+  box-shadow: 0px 0px 20px black;
 }
 
 .back-card-content {
