@@ -31,13 +31,23 @@ function App() {
           <div className="card-name">
             <label>CARDHOLDER NAME</label>
             <br />
-            <input type="text" name="" className="card-input" />
+            <input
+              type="text"
+              name=""
+              className="card-input"
+              placeholder="e.g. Jane Appleseed"
+            />
           </div>
           <br />
           <div className="card-number">
             <label>CARD NUMBER</label>
             <br />
-            <input type="text" name="" className="card-input" />
+            <input
+              type="text"
+              name=""
+              className="card-input"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
           </div>
           <br />
           <br />
@@ -47,12 +57,20 @@ function App() {
                 <label>EXP. DATE (MM/YY)</label>
               </div>
               <div className="card-expiration-inputs">
-                <input type="text" name="" className="card-input" />
+                <input
+                  type="tel"
+                  name=""
+                  className="card-input"
+                  placeholder="MM"
+                  maxLength="2"
+                />
                 <input
                   type="text"
                   name=""
                   className="card-input"
                   id="card-input-id"
+                  placeholder="YY"
+                  maxLength="2"
                 />
               </div>
             </div>
@@ -61,7 +79,13 @@ function App() {
                 <label>CVC</label>
               </div>
               <div className="card-three-numbers-input">
-                <input type="text" name="" className="card-input" />
+                <input
+                  type="text"
+                  name=""
+                  className="card-input"
+                  placeholder="e.g. 123"
+                  maxLength="3"
+                />
               </div>
             </div>
           </div>
