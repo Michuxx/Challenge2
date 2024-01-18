@@ -13,6 +13,7 @@ label {
 
 .credit-site {
   display: flex;
+  height: 100vh;
 }
 
 .credits-images-side {
@@ -105,9 +106,10 @@ label {
   background-repeat: no-repeat;
   width: 100%;
   height: 0;
-  padding-top: 54.8%;
+  padding-top: 55%;
   display: flex;
   box-shadow: 0px 0px 20px black;
+  border-radius: 15px;
 }
 
 .front-card-content {
@@ -116,14 +118,17 @@ label {
   left: 0;
   width: 100%;
   height: 100%;
-  margin: 20px 40px 20px 30px;
+  padding: 20px 20px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-around;
 }
 .circles {
   display: flex;
   align-items: center;
   margin-right: 20px;
   gap: 20px;
-  padding-bottom: 20px;
 }
 
 .big-circle {
@@ -142,16 +147,15 @@ label {
 
 .front-card-number-display {
   color: white;
-  font-size: 2vw;
-  letter-spacing: 2px;
+  font-size: 1.2rem;
+  letter-spacing: 3.5px;
   font-family: "Space Grotesk";
-  margin-right: 20px;
+  padding-top: 10%;
 }
 
 .bottom-front-card-information-display {
   display: flex;
   justify-content: space-between;
-  margin-right: 70px;
   line-height: 5px;
   color: white;
   font-size: 1.2vw;
@@ -168,7 +172,6 @@ label {
   height: 0;
   padding-top: 54.8%;
   display: flex;
-  box-shadow: 0px 0px 20px black;
 }
 
 .back-card-content {
@@ -178,4 +181,95 @@ label {
   font-size: 1.1vw;
   color: white;
   letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 700px) {
+  .credit-site {
+    flex-direction: column;
+  }
+
+  .credits-images-side {
+    width: 100%;
+    height: 40%;
+    position: relative;
+  }
+
+  .front-card {
+    position: absolute;
+    left: 3%;
+    top: auto;
+    bottom: -19%;
+    padding-top: 38%;
+    width: 69%;
+    box-shadow: none;
+    z-index: 2;
+  }
+
+  .back-card {
+    position: absolute;
+    left: 14%;
+    top: auto;
+    bottom: 21.5%;
+    padding-top: 38%;
+    width: 69%;
+    box-shadow: none;
+    z-index: 1;
+  }
+
+  .big-circle {
+    height: 7.5vw;
+    width: 7.5vw;
+  }
+
+  .small-circle {
+    height: 3vw;
+    width: 3vw;
+  }
+
+  .front-card-number-display {
+    font-size: 2.1rem;
+  }
+
+  .bottom-front-card-information-display {
+    font-size: 1.2rem;
+  }
+
+  .user-form-side {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: normal;
+    padding-top: 15%;
+  }
+
+  .user-form {
+    width: 80%;
+  }
+
+  .card-name .card-input,
+  .card-number .card-input,
+  .card-three-numbers .card-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-expiration .card-input,
+  #card-input-id {
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .confirm-btn {
+    padding: 18px;
+    font-size: 1.3rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .back-card-content {
+    font-size: 1.1rem;
+  }
 }
