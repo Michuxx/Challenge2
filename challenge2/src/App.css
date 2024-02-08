@@ -195,6 +195,10 @@ label {
   letter-spacing: 2px;
 }
 
+.error_p {
+  color: red;
+}
+
 @media only screen and (max-width: 700px) {
   .credit-site {
     flex-direction: column;

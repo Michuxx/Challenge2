@@ -1,7 +1,75 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  const [inputFields, setInputFields] = useState({
+    cardHolderName: "",
+    cardNumber: "",
+    expDateMonth: "",
+    expDateYear: "",
+    cardCVC: "",
+  });
+
+  const [error, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+
+  const validateValues = (inputValues) => {
+    let errors = {};
+    let re_month = /^(0[1-9]|1[0-2])/;
+    let re_year = /(0[0-9]1[0-9])$/;
+    if (!inputValues.cardHolderName) {
+      errors.cardHolderName = "Can't be blank";
+    }
+    if (
+      inputValues.carNumber?.length != 16 ||
+      inputValues.carNumber?.search("[a-zA-Z]")
+    ) {
+      errors.cardNumber = "Incorrect card number";
+    }
+
+    if (
+      !re_month.test(inputValues.expDateMonth) ||
+      inputValues.expDateMonth === null
+    ) {
+      errors.expDateMonth = "Incorrect month";
+    }
+    if (
+      !re_year.test(inputValues.expDateYear) ||
+      inputValues.expDateYear === null
+    ) {
+      errors.expDateYear = "Incorrect year";
+    }
+    if (
+      inputValues.cardCVC.search("[a-zA-Z]") ||
+      inputValues.cardCVC.length <= 3
+    ) {
+      errors.cardCVC = "Incorrect CVC";
+    }
+    console.log(errors);
+
+    return errors;
+  };
+
+  const handleChange = (e) => {
+    setInputFields({ ...inputFields, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrors(validateValues(inputFields));
+    setSubmitting(true);
+  };
+
+  const finishSubmit = () => {
+    console.log(inputFields);
+  };
+
+  useEffect(() => {
+    if (Object.keys(error).length === 0 && submitting) {
+      finishSubmit();
+    }
+  }, [error]);
+
   return (
     <div className="credit-site">
       <div className="credits-images-side">
@@ -33,10 +101,16 @@ function App() {
             <br />
             <input
               type="text"
-              name=""
+              name="cardHolderName"
               className="card-input"
               placeholder="e.g. Jane Appleseed"
+              value={inputFields.cardHolderName}
+              onChange={handleChange}
+              style={{ border: error.cardHolderName ? "1px solid red" : null }}
             />
+            <p className="error_p">
+              {error.cardHolderName ? "Can't be blank" : null}
+            </p>
           </div>
           <br />
           <div className="card-number">
@@ -44,10 +118,16 @@ function App() {
             <br />
             <input
               type="text"
-              name=""
+              name="cardNumber"
               className="card-input"
               placeholder="e.g. 1234 5678 9123 0000"
+              value={inputFields.cardNumber}
+              onChange={handleChange}
+              style={{ border: error.cardNumber ? "1px solid red" : null }}
             />
+            <p className="error_p">
+              {error.cardNumber ? "Wrong format, numbers only" : null}
+            </p>
           </div>
           <br />
           <br />
@@ -59,19 +139,33 @@ function App() {
               <div className="card-expiration-inputs">
                 <input
                   type="tel"
-                  name=""
+                  name="expDateMonth"
                   className="card-input"
                   placeholder="MM"
                   maxLength="2"
+                  value={inputFields.expDateMonth}
+                  onChange={handleChange}
+                  style={{
+                    border: error.expDateMonth ? "1px solid red" : null,
+                  }}
                 />
+
                 <input
                   type="text"
-                  name=""
+                  name="expDateYear"
                   className="card-input"
                   id="card-input-id"
                   placeholder="YY"
                   maxLength="2"
+                  value={inputFields.expDateYear}
+                  onChange={handleChange}
+                  style={{ border: error.expDateYear ? "1px solid red" : null }}
                 />
+                <p className="error_p">
+                  {error.expDateMonth || error.expDateYear
+                    ? "Can't be blank"
+                    : null}
+                </p>
               </div>
             </div>
             <div className="card-three-numbers">
@@ -81,15 +175,23 @@ function App() {
               <div className="card-three-numbers-input">
                 <input
                   type="text"
-                  name=""
+                  name="cardCVC"
                   className="card-input"
                   placeholder="e.g. 123"
                   maxLength="3"
+                  value={inputFields.cardCVC}
+                  onChange={handleChange}
+                  style={{ border: error.cardCVC ? "1px solid red" : null }}
                 />
+                <p className="error_p">
+                  {error.cardCVC ? "Can't be blank" : null}
+                </p>
               </div>
             </div>
           </div>
-          <button className="confirm-btn">Confirm</button>
+          <button className="confirm-btn" onClick={handleSubmit}>
+            Confirm
+          </button>
         </div>
       </div>
     </div>
