@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import Input from "react-input-auto-format";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [inputFields, setInputFields] = useState({
@@ -13,17 +14,18 @@ function App() {
 
   const [error, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const validateValues = (inputValues) => {
     let errors = {};
     let re_month = /^(0[1-9]|1[0-2])/;
     let re_year = /([0-9]{4}|[0-9]{2})$/;
-    let re_aplh = /[a-zA-Z]/;
+    let re_aplh = /^[0-9]/;
     if (!inputValues.cardHolderName) {
       errors.cardHolderName = "Can't be blank";
     }
     if (
-      re_aplh.test(inputValues.cardNumber) ||
+      !re_aplh.test(inputValues.cardNumber) ||
       inputValues.cardNumber?.length != 19
     ) {
       errors.cardNumber = "Incorrect card number";
@@ -46,6 +48,17 @@ function App() {
       inputValues.cardCVC.length != 3
     ) {
       errors.cardCVC = "Incorrect CVC";
+    } else {
+      navigate("/SuccessedPage", {
+        replace: true,
+        state: {
+          name: inputFields.cardHolderName,
+          number: inputFields.cardNumber,
+          month: inputFields.expDateMonth,
+          year: inputFields.expDateYear,
+          cvc: inputFields.cardCVC,
+        },
+      });
     }
     console.log(errors);
 
