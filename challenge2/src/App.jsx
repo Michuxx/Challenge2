@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import Input from "react-input-auto-format";
 
 function App() {
   const [inputFields, setInputFields] = useState({
@@ -16,13 +17,14 @@ function App() {
   const validateValues = (inputValues) => {
     let errors = {};
     let re_month = /^(0[1-9]|1[0-2])/;
-    let re_year = /(0[0-9]1[0-9])$/;
+    let re_year = /([0-9]{4}|[0-9]{2})$/;
+    let re_aplh = /[a-zA-Z]/;
     if (!inputValues.cardHolderName) {
       errors.cardHolderName = "Can't be blank";
     }
     if (
-      inputValues.carNumber?.length != 16 ||
-      inputValues.carNumber?.search("[a-zA-Z]")
+      re_aplh.test(inputValues.cardNumber) ||
+      inputValues.cardNumber?.length != 19
     ) {
       errors.cardNumber = "Incorrect card number";
     }
@@ -40,8 +42,8 @@ function App() {
       errors.expDateYear = "Incorrect year";
     }
     if (
-      inputValues.cardCVC.search("[a-zA-Z]") ||
-      inputValues.cardCVC.length <= 3
+      !inputValues.cardCVC.search("[a-zA-Z]") ||
+      inputValues.cardCVC.length != 3
     ) {
       errors.cardCVC = "Incorrect CVC";
     }
@@ -80,17 +82,21 @@ function App() {
               <div className="small-circle"></div>
             </div>
             <div className="front-card-number-display">
-              <p>1234 1234 1234 1234</p>
+              <p>{inputFields.cardNumber}</p>
             </div>
             <div className="bottom-front-card-information-display">
-              <p>Strażak Braum</p>
-              <p>12/12</p>
+              <p>{inputFields.cardHolderName}</p>
+              <p>
+                {inputFields.expDateMonth}
+                {inputFields.expDateMonth ? "/" : null}
+                {inputFields.expDateYear}
+              </p>
             </div>
           </div>
         </div>
         <div className="back-card">
           <div className="back-card-content">
-            <p>000</p>
+            <p>{inputFields.cardCVC}</p>
           </div>
         </div>
       </div>
@@ -116,7 +122,8 @@ function App() {
           <div className="card-number">
             <label>CARD NUMBER</label>
             <br />
-            <input
+            <Input
+              format="#### #### #### ####"
               type="text"
               name="cardNumber"
               className="card-input"
@@ -125,6 +132,7 @@ function App() {
               onChange={handleChange}
               style={{ border: error.cardNumber ? "1px solid red" : null }}
             />
+
             <p className="error_p">
               {error.cardNumber ? "Wrong format, numbers only" : null}
             </p>
