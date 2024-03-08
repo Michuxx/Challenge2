@@ -199,6 +199,25 @@ label {
   color: red;
 }
 
+.success-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+}
+
+.success-side h1 {
+  letter-spacing: 4px;
+  padding-top: 1rem;
+}
+
+.success-side p {
+  color: #87848b;
+  font-size: 1rem;
+  margin-block-start: 0;
+}
+
 @media only screen and (max-width: 700px) {
   .credit-site {
     flex-direction: column;
@@ -208,6 +227,7 @@ label {
     width: 100%;
     height: 40%;
     position: relative;
+    background-image: url("./bg-main-mobile.png");
   }
 
   .front-card {
@@ -258,7 +278,8 @@ label {
     padding-top: 15%;
   }
 
-  .user-form {
+  .user-form,
+  .success-side {
     width: 80%;
   }
 

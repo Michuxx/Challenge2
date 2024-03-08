@@ -1,11 +1,16 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
+import Icon_complete from "/icon-complete.svg";
 
 const successedPage = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
   console.log(state);
+
+  const DissmissFunction = () => {
+    navigate("/", { replace: true });
+  };
 
   return (
     <div className="credit-site">
@@ -31,6 +36,16 @@ const successedPage = () => {
           <div className="back-card-content">
             <p>{state.cvc}</p>
           </div>
+        </div>
+      </div>
+      <div className="user-form-side">
+        <div className="success-side">
+          <img src={Icon_complete} alt="" />
+          <h1>THANK YOU!</h1>
+          <p>We've added your card details</p>
+          <button className="confirm-btn" onClick={DissmissFunction}>
+            Continue
+          </button>
         </div>
       </div>
     </div>
