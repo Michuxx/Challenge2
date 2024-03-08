@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import App from "./App.jsx";
 import { Routes, HashRouter, Route } from "react-router-dom";
 import SuccessedPage from "./successedPage";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
@@ -12,5 +12,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="successedPage" element={<SuccessedPage />}></Route>
       </Routes>
     </HashRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
