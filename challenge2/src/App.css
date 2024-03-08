@@ -218,6 +218,73 @@ label {
   margin-block-start: 0;
 }
 
+@media only screen and (max-width: 1200px) {
+  .big-circle {
+    height: 4vw;
+    width: 4vw;
+  }
+
+  .small-circle {
+    height: 1.25vw;
+    width: 1.25vw;
+  }
+
+  .front-card-number-display {
+    font-size: 1.6rem;
+  }
+
+  .back-card-content {
+    font-size: 0.9rem;
+  }
+  .bottom-front-card-information-display {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .big-circle {
+    height: 4vw;
+    width: 4vw;
+  }
+
+  .small-circle {
+    height: 1.25vw;
+    width: 1.25vw;
+  }
+
+  .front-card-number-display {
+    font-size: 1.3rem;
+  }
+
+  .back-card-content {
+    font-size: 0.8rem;
+  }
+  .bottom-front-card-information-display {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 925px) {
+  .big-circle {
+    height: 3.75vw;
+    width: 3.75vw;
+  }
+
+  .small-circle {
+    height: 1.25vw;
+    width: 1.25vw;
+  }
+
+  .front-card-number-display {
+    font-size: 0.8rem;
+  }
+
+  .back-card-content {
+    font-size: 0.6rem;
+  }
+  .bottom-front-card-information-display {
+    font-size: 0.7rem;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .credit-site {
     flex-direction: column;
@@ -308,5 +375,42 @@ label {
 
   .back-card-content {
     font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .front-card-number-display {
+    font-size: 1.7rem;
+  }
+
+  .back-card-content {
+    font-size: 1rem;
+  }
+  .bottom-front-card-information-display {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .front-card-number-display {
+    font-size: 1.1rem;
+  }
+
+  .back-card-content {
+    font-size: 0.85rem;
+  }
+  .bottom-front-card-information-display {
+    font-size: 0.82rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .front-card-number-display {
+    font-size: 1rem;
+  }
+
+  .back-card-content {
+    font-size: 0.65rem;
+  }
+  .bottom-front-card-information-display {
+    font-size: 0.8rem;
   }
 }
