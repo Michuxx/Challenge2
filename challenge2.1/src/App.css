@@ -22,7 +22,7 @@ label {
 
 .credits-images-side {
   width: 30vw;
-  background-image: url(./images/bg-main-desktop.png);
+  background-image: url(./bg-main-desktop.png);
   background-size: cover;
   height: 100vh;
 }
